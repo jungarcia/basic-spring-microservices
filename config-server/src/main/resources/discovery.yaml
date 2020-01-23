@@ -1,0 +1,11 @@
+server:
+    port: 9001
+    
+spring:
+    application:
+        name: netflix-eureka-naming-server
+        
+eureka:
+    client:
+        fetch-registry: false
+        register-with-eureka: false

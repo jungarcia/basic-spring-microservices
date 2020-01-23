@@ -1,0 +1,20 @@
+server:
+    port: 8083
+    
+spring:
+    application:
+        name: organization-service
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: P@55w0rd
+        url: jdbc:mysql://127.0.0.1:3306/jundb
+        username: admin
+    jpa:
+        hibernate:
+            ddl-auto: none
+        show-sql: true
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:9001/eureka                

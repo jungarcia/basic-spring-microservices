@@ -1,0 +1,27 @@
+server:
+  port: 9002
+
+#spring:
+#  application:
+#    name: config-server
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: file:///${user.home}/application-config
+       
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        native: 
+          searchLocations: file:/D:/Wisesoft/Other/SourceCode/Microservices/application-configs/
+  profiles: 
+    active: native
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka
