@@ -1,5 +1,5 @@
 package com.junjun.organizationservices.entity;
-// Generated Dec 24, 2019 4:27:48 PM by Hibernate Tools 5.1.7.Final
+// Generated Jan 23, 2020 3:17:42 PM by Hibernate Tools 5.1.7.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,13 +19,12 @@ public class Employee implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2689751166931540999L;
+	private static final long serialVersionUID = 7171524855629105530L;
 	
 	private String id;
 	private Department department;
-	private Organization organization;
 	private String name;
-	private Short age;
+	private Integer age;
 	private String position;
 
 	public Employee() {
@@ -35,11 +34,9 @@ public class Employee implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Employee(String id, Department department, Organization organization, String name, Short age,
-			String position) {
+	public Employee(String id, Department department, String name, Integer age, String position) {
 		this.id = id;
 		this.department = department;
-		this.organization = organization;
 		this.name = name;
 		this.age = age;
 		this.position = position;
@@ -65,16 +62,6 @@ public class Employee implements java.io.Serializable {
 		this.department = department;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "organization_id")
-	public Organization getOrganization() {
-		return this.organization;
-	}
-
-	public void setOrganization(Organization organization) {
-		this.organization = organization;
-	}
-
 	@Column(name = "name", length = 200)
 	public String getName() {
 		return this.name;
@@ -85,11 +72,11 @@ public class Employee implements java.io.Serializable {
 	}
 
 	@Column(name = "age")
-	public Short getAge() {
+	public Integer getAge() {
 		return this.age;
 	}
 
-	public void setAge(Short age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
@@ -101,4 +88,5 @@ public class Employee implements java.io.Serializable {
 	public void setPosition(String position) {
 		this.position = position;
 	}
+
 }

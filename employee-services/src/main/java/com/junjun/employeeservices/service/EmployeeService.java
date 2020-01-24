@@ -42,7 +42,7 @@ public class EmployeeService {
         return employeeRepository.findByDepartmentId(departmentId);
     }
 
-    public List<Employee> findEmployeeByOrganizationId(String organizationId) {
-        return employeeRepository.findByOrganizationId(organizationId);
-    }
+//    public List<Employee> findEmployeeByOrganizationId(String organizationId) {
+//        return employeeRepository.findByOrganizationId(organizationId);
+//    }
 }

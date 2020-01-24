@@ -1,8 +1,9 @@
 package com.junjun.organizationservices.entity;
-// Generated Dec 24, 2019 4:27:48 PM by Hibernate Tools 5.1.7.Final
+// Generated Jan 23, 2020 3:17:42 PM by Hibernate Tools 5.1.7.Final
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ public class Department implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -8341559968157649527L;
+	private static final long serialVersionUID = -6060170745413773388L;
 	
 	private String id;
 	private Organization organization;
@@ -81,4 +82,5 @@ public class Department implements java.io.Serializable {
 	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
 	}
+
 }

@@ -9,5 +9,5 @@ import com.junjun.employeeservices.entity.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, String> {
 
 	List<Employee> findByDepartmentId(String departmentId);
-	List<Employee> findByOrganizationId(String organizationId);
+//	List<Employee> findByOrganizationId(String organizationId);
 }
