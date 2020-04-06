@@ -1,6 +1,5 @@
 package com.junjun.departmentservices.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,7 +12,6 @@ import com.junjun.departmentservices.entity.Department;
 import com.junjun.departmentservices.entity.Employee;
 import com.junjun.departmentservices.feignclient.EmployeeClient;
 import com.junjun.departmentservices.repository.DepartmentRepository;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service
 @Transactional
@@ -30,13 +28,7 @@ public class DepartmentService {
     }
 	
 	public Department findDepartmentByIdRecovery(String id) {
-//		 return departmentRepository.findById(id).orElse(null);
-		
-		System.out.println("findDepartmentByIdRecovery");
-		Department department = departmentRepository.findById(id).orElse(null);
-		// FIXME Persistence error
-		department.setEmployees(new ArrayList<>());
-		return department;
+        return departmentRepository.findById(id).orElse(null);
     }
 
     public Department addNewDepartment(Department department) {
@@ -56,10 +48,9 @@ public class DepartmentService {
         return departmentRepository.findByOrganizationId(organizationId);
     }
 
-    @HystrixCommand(fallbackMethod = "findDepartmentByIdRecovery")
 	public Department findDepartmentById(String id) {
 		//return departmentRepository.findById(id).orElse(null);
-		System.out.println("findDepartmentById");
+		
 		Optional<Department> department = departmentRepository.findById(id);
 
         department.ifPresent(d -> {
